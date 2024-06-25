@@ -1,13 +1,25 @@
 {
+<<<<<<< HEAD
   "name": "your-app-name",
   "version": "1.0.0",
   "description": "Your app description",
   "main": "index.js",
+=======
+  "name": "my-app",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3"
+  },
+>>>>>>> 4a8a250fa6a2459c2d059c76cd681429089fab2d
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+<<<<<<< HEAD
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -20,3 +32,7 @@
   }
 }
 
+=======
+  }
+}
+>>>>>>> 4a8a250fa6a2459c2d059c76cd681429089fab2d
