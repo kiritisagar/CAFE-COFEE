@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: database
+spec:
+  serviceName: database
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database
+  template:
+    metadata:
+      labels:
+        app: database
+    spec:
+      containers:
+      - name: database
+        image: postgres:latest  # Replace with your database image
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_DB
+          value: your_database_name
+        - name: POSTGRES_USER
+          value: your_database_user
+        - name: POSTGRES_PASSWORD
+          value: your_database_password
+        volumeMounts:
+        - name: database-storage
+          mountPath: /var/lib/postgresql/data
+  volumeClaimTemplates:
+  - metadata:
+      name: database-storage
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 10Gi  # Adjust as per your database storage needs
+
